@@ -5,24 +5,26 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(8)
-  function addn(){
-    setCount(count+1)
-  }
-  function subtract(){
-    setCount(count-1)
-  }
+  const[tex,setTex]=useState('')
+  const[text,setText]=useState('')
+ 
 
   return (
-    <>
-      <h1>count {count}</h1>
+   <>
+    <div>
       <div>
-        <div>
-          <h3>count {count}</h3>
-          <button onClick={addn}>+</button>
-          <button onClick={subtract}>-</button>
-        </div>
+        <label htmlFor="">Name1</label>
+        <input onChange={(e)=>setTex(e.target.value)} type="text" />
+
       </div>
-    </>
+      <div>
+        <label htmlFor="">Second</label>
+        <input onChange={(event)=>setText(event.target.value)} type="text" />
+      </div>
+
+      <div><h3>{tex} {text}</h3></div>
+    </div>
+   </>
   )
 }
 
