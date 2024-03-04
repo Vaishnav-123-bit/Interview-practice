@@ -5,6 +5,7 @@ import './App.css'
 import axios from "axios"
 import Button from './component/Button'
 import Context from './component/Context'
+import ClassBase from './component/ClassBase'
 
 const reducer=(state,action)=>{
   switch(action.type){
@@ -78,7 +79,8 @@ function App() {
       </div> */}
 
 
-      <Context/>
+      {/* <Context/> */}
+      <ClassBase/>
     </>
   )
 }
