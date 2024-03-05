@@ -1,15 +1,24 @@
-import { useEffect, useLayoutEffect, useReducer, useRef, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import axios from "axios"
-import Button from './component/Button'
-import Context from './component/Context'
-import ClassBase from './component/ClassBase'
-import UseContext from './component/UseContext'
-import Usereducer from './component/Usereducer'
-import UseEffect from './component/UseEffect'
-import Car from './component/Car'
+import {
+  useEffect,
+  useLayoutEffect,
+  useReducer,
+  useRef,
+  useState,
+} from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+// import axios from "axios"
+// import Button from './component/Button'
+// // import Context from './component/Context'
+// import ClassBase from './component/ClassBase'
+// import UseContext from './component/UseContext'
+// import Usereducer from './component/Usereducer'
+// import UseEffect from './component/UseEffect'
+// import Car from './component/Car'
+import Profile from "./component/Profile";
+import Entry from "./component/Entry";
+// import Login from './component/Login'
 
 const reducer=(state,action)=>{
   switch(action.type){
@@ -22,75 +31,42 @@ const reducer=(state,action)=>{
 
 }
 function App() {
-  const [state,dispatch]=useReducer(reducer,{count:0,showText:true})
-  const[news,setNews]=useState([])
+  const [state, dispatch] = useReducer(reducer, { count: 0, showText: true });
+  const [news, setNews] = useState([]);
 
-  const inputRef=useRef(null)
+  const inputRef = useRef(null);
   // const focusRef=()=>{
   //   inputRef.current.focus()
   // }
   // const ButtonRef=useRef(null)
 
- 
-    // useLayoutEffect(()=>{
-    //   console.log(inputRef.current.value)
-    // },[])
+  // useLayoutEffect(()=>{
+  //   console.log(inputRef.current.value)
+  // },[])
 
-    // useEffect(()=>{
-    //   inputRef.current.value="amka dhamka"
-    // },[])
-  
+  // useEffect(()=>{
+  //   inputRef.current.value="amka dhamka"
+  // },[])
 
   // useEffect(()=>{
   //   axios
   //   .get("https://jsonplaceholder.typicode.com/comments")
   //   .then((res)=>{
   //     const imp=res.data;
-  
+
   //     setNews(imp)
 
   //   }
- 
 
   //   )
-   
+
   // },[])
   return (
-    <>
-      <div>
-        <h1>{state.count}</h1>
-        <button onClick={()=>dispatch({type:"INCREMENT"})}></button>
-        <h4>{state.showText && <p>this text</p>}</h4>
-      </div>
-      <Car name="abc" model="newsa"/>
-        {/* {console.log(news,"data frrom vrtun")}
-        {news.map((list)=>(
-          <li key={list.id} max={10}>
-            <ul>{list.name}</ul>
-            <h3>{list.email}</h3></li>
-        ))} */}
-      {/* <div>
-
-        <div>
-          <input type="text" placeholder='ithu ' value={'ithub'} ref={inputRef} />
-          <button >Dab</button>
-        </div>
-
-      </div> */}
-
-      {/* <div>
-        <button onClick={()=>ButtonRef.current.alterToggle()}>Parent</button>
-        <Button ref={ButtonRef}/>
-      </div> */}
-
-
-      {/* <Context/> */}
-      {/* <ClassBase/> */}
-      <UseContext/>
-      <Usereducer/>
-      <UseEffect/>
-    </>
-  )
+    <div className="App">
+      <Profile />
+      <Entry />
+    </div>
+  );
 }
 
-export default App
+export default App;
