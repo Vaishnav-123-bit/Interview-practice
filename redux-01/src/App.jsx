@@ -6,6 +6,10 @@ import axios from "axios"
 import Button from './component/Button'
 import Context from './component/Context'
 import ClassBase from './component/ClassBase'
+import UseContext from './component/UseContext'
+import Usereducer from './component/Usereducer'
+import UseEffect from './component/UseEffect'
+import Car from './component/Car'
 
 const reducer=(state,action)=>{
   switch(action.type){
@@ -58,6 +62,7 @@ function App() {
         <button onClick={()=>dispatch({type:"INCREMENT"})}></button>
         <h4>{state.showText && <p>this text</p>}</h4>
       </div>
+      <Car name="abc" model="newsa"/>
         {/* {console.log(news,"data frrom vrtun")}
         {news.map((list)=>(
           <li key={list.id} max={10}>
@@ -80,7 +85,10 @@ function App() {
 
 
       {/* <Context/> */}
-      <ClassBase/>
+      {/* <ClassBase/> */}
+      <UseContext/>
+      <Usereducer/>
+      <UseEffect/>
     </>
   )
 }
