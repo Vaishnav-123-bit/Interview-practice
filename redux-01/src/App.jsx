@@ -18,6 +18,8 @@ import "./App.css";
 // import Car from './component/Car'
 import Profile from "./component/Profile";
 import Entry from "./component/Entry";
+import Exit from "./component/Exit";
+import ColorChange from "./component/ColorChange";
 // import Login from './component/Login'
 
 const reducer=(state,action)=>{
@@ -65,6 +67,8 @@ function App() {
     <div className="App">
       <Profile />
       <Entry />
+      <Exit/>
+      <ColorChange/>
     </div>
   );
 }
